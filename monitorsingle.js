@@ -51,12 +51,6 @@ function revertVideoToAutoMonitor() {
         });
 }
 
-xapi.event.on('UserInterface Extensions Panel Clicked', (event) => {
-    if (event.PanelId === 'setSingleMonitor') {
-        setVideoToSingleMonitorIfMatched();
-    }
-});
-
 xapi.event.on('PresentationStarted', async () => {
     console.log("Presentation started event detected.");
     await setVideoToSingleMonitorIfMatched();
